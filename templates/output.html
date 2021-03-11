@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Image</title>
+    <title>AWS FACE RECOGNITION FROM IMAGE</title>
 </head>
 <body>
     <h1 style="margin-bottom:3cm;"">AWS RESULT IMAGE</h1>
-
-    <!-- <p style="margin-bottom:3cm;">This is the first question?</p> -->
-
-
-    <img id="picture"  height="500" width="700" src="data:image/jpeg;base64,{{ img_data }}">
-
+    <img id="picture"  height="500"  style="margin-right:3cm;" width="700" src="data:image/jpeg;base64,{{ img_data }}">
+    <h1 style="margin-bottom:3cm;"">{{result}}</h1>
+    <div class="images">
+        {% for face in facelist %}
+            <div class="face">
+                <img height="200"  width="300" src="data:image/jpeg;base64,{{ face }}">
+            </div>
+	    {% endfor %}
+    </div>
+    
+    
 </body>
 </html>
